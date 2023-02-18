@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <style>
+        table {
+          margin: 0 auto; /* Center the table on the page */
+          border-collapse: collapse;
+          width: 80%; /* Set the width of the table */
+        }
+        th, td {
+          border: 1px solid black; /* Add a border to the table cells */
+          padding: 8px;
+          text-align: left;
+        }
+        th {
+          background-color: #f2f2f2; /* Set a background color for the header cells */
+        }
+        tr:nth-child(even) {
+          background-color: #f2f2f2; /* Set a background color for even rows */
+        }
+      </style>
+    </head>
+    <body>
+        <h1 style="margin-left: 600px;"><%= title%> a <%= movies.length %> contents</h1>
+        
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>ImdbID</th>
+            <th>Yype</th>
+            <th>Poster</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% movies.forEach(movie=>{%>  
+          <tr>
+            <td><%= movie.Title %></td>
+            <td><%= movie.Year %></td>
+            <td><%= movie.imdbID %></td>
+            <td><%= movie.Type %></td>
+            <td><img src="<%= movie.Poster %>" alt="Image description"></td>
+          </tr>
+          <%})%>
+        </tbody>
+      </table>
+    </body>
+</html>
